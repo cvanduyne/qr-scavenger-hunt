@@ -53,7 +53,8 @@ gameLogic.OnFoundId = function( id )
 {
   console.log("Handling id: "+id);  
   
-  this.data[id].unlocked = true;
+  this.data[id].unlocked = true;  
+  this.UpdateCards();
 }
 gameLogic.HandleScan = function( value )
 {
