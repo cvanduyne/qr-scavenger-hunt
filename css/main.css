@@ -46,5 +46,7 @@ ul.posts li {
     width: 30em;
     overflow-x: auto;
     white-space: nowrap;  
-    display: inline-table;
+}
+table {
+    display: inline-table;    
 }
