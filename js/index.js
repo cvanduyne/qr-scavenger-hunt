@@ -14,3 +14,4 @@ scanner.addListener('scan', function (content) {
     }).catch(function (e) {
       console.error(e);
     });
+});
