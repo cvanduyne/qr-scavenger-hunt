@@ -45,5 +45,6 @@ ul.posts li {
 .container {
     width: 30em;
     overflow-x: auto;
-    white-space: nowrap;
+    white-space: nowrap;  
+    display: inline-table;
 }
