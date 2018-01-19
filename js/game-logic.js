@@ -18,6 +18,7 @@ gameLogic.CreateCards = function( parentElement )
   for (var i=0; i < this.data.length; i++)
   {
     var s = document.createElement("span");
+    s.classList.add("cardContainer");
     this.data[i].container.main = s;
     this.CreateCard(s, i);
     parentElement.appendChild(s);
