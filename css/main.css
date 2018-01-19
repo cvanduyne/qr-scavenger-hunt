@@ -53,4 +53,5 @@ ul.posts li {
 }
 table {
     display: inline-table;    
+    width: 100%;
 }
