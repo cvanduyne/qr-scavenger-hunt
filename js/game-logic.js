@@ -4,7 +4,8 @@ var gameLogic = {};
 
 gameLogic.data = [
   {unlocked: false, image: "FOO", name: "Bob", age: 36, description: "sits and watches TV", container: {main: null}},
-  {unlocked: false, image: "BAR", name: "Mary", age: 36, description: "Has lots of cats", container: {main: null}}
+  {unlocked: false, image: "BAR", name: "Mary", age: 36, description: "Has lots of cats", container: {main: null}},
+  {unlocked: false, image: "HI", name: "Some Body", age: 12, description: "Is wearing a cast", container: {main: null}},
 ]
 
 gameLogic.Start = function()
@@ -26,10 +27,20 @@ gameLogic.CreateCards = function( parentElement )
 gameLogic.UpdateCard = function(id)
 {
   var container = this.data[id].container;
-  container.image.innerHTML = this.data[id].image;
-  container.name.innerHTML = this.data[id].name;
-  container.age.innerHTML = this.data[id].age;
-  container.description.innerHTML = this.data[id].description;
+  if (this.data[id].unlocked)
+  {
+    container.image.innerHTML = this.data[id].image;
+    container.name.innerHTML = this.data[id].name;
+    container.age.innerHTML = this.data[id].age;
+    container.description.innerHTML = this.data[id].description;
+  }
+  else
+  {
+    container.image.innerHTML = "----";
+    container.name.innerHTML = "----";
+    container.age.innerHTML = "----";
+    container.description.innerHTML = "----";     
+  }
 }
 gameLogic.UpdateCards = function()
 {
@@ -42,6 +53,7 @@ gameLogic.OnFoundId = function( id )
 {
   console.log("Handling id: "+id);  
   
+  this.data[id].unlocked = true;
 }
 gameLogic.HandleScan = function( value )
 {
