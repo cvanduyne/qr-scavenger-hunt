@@ -44,14 +44,19 @@ ul.posts li {
 
 .container {
     width: 100%;
-    overflow-x: auto;
-    white-space: nowrap;  
+    overflow-y: auto;
+    /*white-space: nowrap;*/  
 }
 
 .cardContainer {
     width: 100em;   
 }
 table {
-    display: inline-table;    
+    /* display: inline-table; */
     width: 100%;
+}
+tbody {
+ font-family:'Helvetica', 'Arial', 'Sans-Serif';
+ font-weight: bold;   
+ font-size: large;
 }
