@@ -67,6 +67,7 @@ gameLogic.CreateCards = function( parentElement )
     var s = document.createElement("span");
     this.data[i].container.main = s;
     this.CreateCard(s, i);
+    parentElement.appendChild(s);
   }
   this.UpdateCards();
 }
