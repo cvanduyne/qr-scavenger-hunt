@@ -2,7 +2,7 @@
 
 var gameLogic = {};
 
-gameLogic.HandleScan( value )
+gameLogic.HandleScan = function( value )
 {
   console.log("Handling scan: "+value);
 
