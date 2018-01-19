@@ -12,8 +12,16 @@ gameLogic.OnFoundId = function( id )
 }
 gameLogic.HandleScan = function( value )
 {
-  var s = value.split(" ")
-  var i = parseInt( s[s.length - 1] );
-  
-  this.OnFoundId( i );
+  // Turn the scanned value into a zero based index referring to the data items
+  try {
+    var s = value.split(" ")
+    var i = parseInt( s[s.length - 1] ) - 1;
+    
+    if (i >= 0 && i < data.length)
+    {
+      this.OnFoundId( i );
+    }
+  catch( err ) {
+    console.log("Got error parsing scan: "+err); 
+  }
 }
