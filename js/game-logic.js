@@ -106,4 +106,4 @@ gameLogic.HandleScan = function( value )
     console.log("Got error parsing scan: "+err); 
   }
 }
-gameLogic.CreateCards( cardContainer );
+gameLogic.CreateCards( document.getElementById("cardContainer") );
