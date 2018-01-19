@@ -47,6 +47,10 @@ ul.posts li {
     overflow-x: auto;
     white-space: nowrap;  
 }
+
+.cardContainer {
+    width: 100em;   
+}
 table {
     display: inline-table;    
 }
