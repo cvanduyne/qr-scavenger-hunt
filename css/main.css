@@ -1,6 +1,6 @@
 body {
-    margin: 60px auto;
-    width: 70%;
+    //margin: 60px auto;
+    //width: 70%;
 }
 nav ul, footer ul {
     font-family:'Helvetica', 'Arial', 'Sans-Serif';
@@ -43,7 +43,7 @@ ul.posts li {
 }
 
 .container {
-    width: 30em;
+    width: 100%;
     overflow-x: auto;
     white-space: nowrap;  
 }
