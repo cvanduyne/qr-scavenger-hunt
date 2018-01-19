@@ -6,7 +6,7 @@ gameLogic.data = [
   {unlocked: false, image: "FOO", name: "Bob", age: 36, description: "sits and watches TV", container: {main: null}},
   {unlocked: false, image: "BAR", name: "Mary", age: 36, description: "Has lots of cats", container: {main: null}}
 ]
-gameLogic.CreateCard = function( id )
+gameLogic.CreateCard = function( parentElement, id )
 {
   // creates a <table> element and a <tbody> element
   var tbl = document.createElement("table");
@@ -66,7 +66,7 @@ gameLogic.CreateCards = function( parentElement )
   {
     var s = document.createElement("span");
     this.data[i].container.main = s;
-    this.CreateCard(s);
+    this.CreateCard(s, i);
   }
   this.UpdateCards();
 }
