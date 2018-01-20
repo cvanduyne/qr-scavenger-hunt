@@ -22,6 +22,7 @@ a:hover {
 h1 {
     font-size: 3em;
     font-family:'Helvetica', 'Arial', 'Sans-Serif';
+    -webkit-margin-before: 0;
 }
 p {
     font-size: 1.5em;
@@ -44,19 +45,78 @@ ul.posts li {
 
 .container {
     width: 100%;
-    overflow-y: auto;
-    /*white-space: nowrap;*/  
+    /* overflow-y: auto; */
+    /*white-space: nowrap;*/
 }
 
 .cardContainer {
-    width: 100em;   
+    width: 100em;
+    /* background-image: url(images/indexcard.jpg); */
 }
 table {
-    /* display: inline-table; */
+    display: inline-table;
     width: 100%;
+    position: relative;
+    background:url(../images/indexcard.jpg);
+
+}
+.scannerTable {
+
+	background:beige;
+	
 }
 tbody {
- font-family:'Helvetica', 'Arial', 'Sans-Serif';
- font-weight: bold;   
- font-size: large;
+	font-family: Lucida Sans Typewriter,Lucida Console,monaco,Bitstream Vera Sans Mono,monospace; 
+//
+	font-family:'Helvetica', 'Arial', 'Sans-Serif';
+//
+	font-weight: bold;   
+//
+	font-size: large;
+	/* margin-top: 0; */
+}
+
+.photo {
+    float:right;
+    width: 200px;
+    height: 200px;
+    transform: rotate(15deg);
+}
+
+.paperclip {
+    position: absolute;
+    right: 130px;
+    top: -30px;
+    width: 50px;
+    height: 100px;
+}
+
+.cardRow
+{
+	height: 300px;
+	vertical-align: top;
+	/* background-image: url(images/indexcard.jpg); */
+}
+
+.indexcard {
+    display:block;
+    /* position:absolute; */
+    background:url(images/indexcard.jpg);
+    /* background-repeat:no-repeat; */
+    /* background-size: 100% 100%; */
+    /*width:122px;
+    height:148px;*/
+    /* float:right; */
+    /* bottom:0; */
+    /* right:0; */
+}
+
+#preview {
+	width:100px;
+	height:100px;
+/*
+    margin-left: auto;
+    margin-right: auto;
+    display: block
+    */
 }

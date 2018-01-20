@@ -4,14 +4,42 @@
 		<title>Hank Quinlan, Horrible Cop</title>
 		<!-- link to main stylesheet -->
 		<link rel="stylesheet" type="text/css" href="css/main.css">
+		<link rel="stylesheet" type="text/css" href="css/kitt.css">
 		<script type="text/javascript" src="js/instascan.min.js"></script>
 	</head>
 	<body>
-	  <video id="preview" width="100" height="100" autoplay muted playsInline ></video>
-	
-		<div class="container" id="cardContainer"></div> 
-		
-	    <script type="text/javascript" src="js/game-logic.js"></script>			
-	    <script type="text/javascript" src="js/index.js"></script>	
+	<header>
+	  <span>
+	  <table class="scannerTable">
+	  <tr>
+	  <td><h2>Searching for</br>QR Identitys</h2>
+	  </td>
+	  <td>
+	  <video id="preview" autoplay muted playsInline ></video>
+	  </td>
+	  <td><h2>Found 0 of 3</h2>
+	  </td>
+	  </tr>
+	  </table>
+			<div id='kitt'>
+			  <div class='one'></div>
+			  <div class='two'></div>
+			  <div class='three'></div>
+			  <div class='four'></div>
+			  <div class='five'></div>
+			  <div class='six'></div>
+			  <div class='seven'></div>
+			  <div class='eight'></div>
+			  <div class='nine'></div>
+			  <div class='ten'></div>
+			</div>
+			
+	  <h3>Scanning...</h3>
+	  </span>
+	</header>
+		<div class="container" id="cardContainer"></div>
+
+	    <script type="text/javascript" src="js/game-logic.js"></script>
+	    <script type="text/javascript" src="js/index.js"></script>
 	</body>
 </html>

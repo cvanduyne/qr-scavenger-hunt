@@ -3,9 +3,9 @@
 var gameLogic = {};
 
 gameLogic.data = [
-  {unlocked: false, image: "musk.jpg", name: "Bob", age: 36, description: "sits and watches TV\nDoes lots of\nrobot stuff and stuff", container: {main: null}},
-  {unlocked: false, image: "gates.jpg", name: "Mary", age: 36, description: "Has lots of cats", container: {main: null}},
-  {unlocked: false, image: "hermine.jpg", name: "Ms. Granger", age: 12, description: "Is wearing a cast", container: {main: null}},
+  {unlocked: false, image: "musk.jpg", name: "Bob", clue: "Where you go when you gotta go", description: "sits and watches TV\nDoes lots of\nrobot stuff and stuff", container: {main: null}},
+  {unlocked: false, image: "gates.jpg", name: "Mary", clue: "Where you go when you gotta go", description: "Has lots of cats", container: {main: null}},
+  {unlocked: false, image: "hermine.jpg", name: "Ms. Granger", clue: "Where you go when you gotta go", description: "Is wearing a cast", container: {main: null}},
 ]
 
 gameLogic.Start = function()
@@ -30,17 +30,23 @@ gameLogic.UpdateCard = function(id)
   var container = this.data[id].container;
   if (this.data[id].unlocked)
   {
-    container.image.innerHTML = "<img src='images/"+this.data[id].image+"' width=100 height=100>";
-    container.name.innerHTML = this.data[id].name;
-    container.age.innerHTML = this.data[id].age;
-    container.description.innerHTML = this.data[id].description;
+//    container.image.innerHTML = ;
+//    container.name.innerHTML = this.data[id].name;
+//    container.age.innerHTML = this.data[id].age;
+    container.description.innerHTML = 
+    "<img class='photo' src='images/"+this.data[id].image+"'>"+
+    "<img class='paperclip' src='images/paperclip.png'></img>" +
+    "<h1>"+this.data[id].name +"</h1>"+    
+    "<h2>"+this.data[id].description +"</h2>";
   }
   else
   {
-    container.image.innerHTML = "<img src='images/unknown.png' width=100 height=100>";
-    container.name.innerHTML = "----";
-    container.age.innerHTML = "----";
-    container.description.innerHTML = "----";
+//    container.image.innerHTML = "<img src='images/unknown.png' width=100 height=100>";
+//    container.name.innerHTML = "----";
+//    container.age.innerHTML = "----";
+    container.description.innerHTML = 
+    "<h1><i>Identity Unknown</i><h1>"+
+    "<h2>QR Clue:<br/>"+this.data[id].clue+"</h2>";
   }
 }
 gameLogic.UpdateCards = function()
@@ -77,49 +83,17 @@ gameLogic.CreateCard = function( parentElement, id )
 {
   // creates a <table> element and a <tbody> element
   var tbl = document.createElement("table");
+  tbl.style = "transform:rotate("+(Math.random()-0.5)*7+"deg);";
   var tblBody = document.createElement("tbody");
 
-  // creating all cells
-  for (var i = 0; i < 2; i++) {
-    // creates a table row
-    var row = document.createElement("tr");
-
-    for (var j = 0; j < 2; j++) {
-      // Create a <td> element and a text node, make the text
-      // node the contents of the <td>, and put the <td> at
-      // the end of the table row
-      var cell = document.createElement("td");
-//      var cellText = document.createTextNode("cell in row "+i+", column "+j);
-//      cell.appendChild(cellText);
-      if (i==0)
-      {
-        if (j==0)
-        {
-         this.data[id].container.image = cell;
-        }
-        else
-        {
-         this.data[id].container.name = cell;
-        }
-      }
-      else
-      {
-        if (j==0)
-        {
-         this.data[id].container.age = cell;
-        }
-        else
-        {
-         this.data[id].container.description = cell;
-        }
-      }
-      row.appendChild(cell);
-    }
+  var row = document.createElement("tr");
+  row.classList.add("cardRow");
+  var cell = document.createElement("td");
+  row.appendChild(cell);
+  tblBody.appendChild(row);
+  this.data[id].container.description = cell;
 
     // add the row to the end of the table body
-    tblBody.appendChild(row);
-  }
-
   // put the <tbody> in the <table>
   tbl.appendChild(tblBody);
   // appends <table> into <body>
