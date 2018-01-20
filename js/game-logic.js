@@ -10,6 +10,7 @@ gameLogic.data = [
 
 gameLogic.Start = function()
 {
+  this.headerDiv = document.getElementById("headerDiv");
   this.statusElement = document.getElementById("status");
   this.CreateCards( document.getElementById("cardContainer") );
 }
@@ -67,15 +68,29 @@ gameLogic.OnFoundId = function( id )
 {
   console.log("Handling id: "+id);
 
+  var wasUnlocked = this.data[id].unlocked;
   this.data[id].unlocked = true;
+
+
+  //if (!wasUnlocked)
+  {
+    headerDiv.classList.add("goGreenToBeige");
+    this.data[id].container.row.classList.add("goGreenToInitial");
+
+    var localId = id;
+    setTimeout(function(){    
+      headerDiv.classList.remove("goGreenToBeige");
+      gameLogic.data[localId].container.row.classList.remove("goGreenToInitial");
+    } ,1500);
+  }
   this.UpdateCards();
 }
 gameLogic.HandleScan = function( value )
 {
   // Turn the scanned value into a zero based index referring to the data items
   try {
-    var s = value.split(" ")
-    var i = parseInt( s[s.length - 1] ) - 1;
+    var s = value.split("=")
+    var i = parseInt( s[s.length - 1] );
 
     if (i >= 0 && i < this.data.length)
     {
@@ -95,6 +110,8 @@ gameLogic.CreateCard = function( parentElement, id )
 
   var row = document.createElement("tr");
   row.classList.add("cardRow");
+  this.data[id].container.row = row;
+
   var cell = document.createElement("td");
   row.appendChild(cell);
   tblBody.appendChild(row);

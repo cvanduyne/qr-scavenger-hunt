@@ -64,7 +64,7 @@ table {
 }
 .scannerTable {
 
-background:beige;
+background: none;
 }
 tbody {
 	font-family: Lucida Sans Typewriter,Lucida Console,monaco,Bitstream Vera Sans Mono,monospace; 
@@ -97,6 +97,7 @@ tbody {
 	height: 300px;
 	vertical-align: top;
 	/* background-image: url(images/indexcard.jpg); */
+	/* background-color: green; */
 }
 
 .indexcard {
@@ -135,4 +136,22 @@ header {
 }
 .main{
   margin-top: 160px;
+}
+
+.goGreenToBeige {
+	animation: fadeGreenToBeige 1s ease-out
+}
+.goGreenToInitial {
+	animation: fadeGreenToInitial 1s ease-out
+}
+.goYellow {
+
+	background:yellow
+}
+@-webkit-keyframes fadeGreenToBeige {
+  0%   {background:green;}
+  100% {background:beige;}
+}@-webkit-keyframes fadeGreenToInitial {
+  0%   {background:green;}
+  100% {background:initial;}
 }
