@@ -3,9 +3,9 @@
 var gameLogic = {};
 
 gameLogic.data = [
-  {unlocked: false, image: "musk.jpg", name: "Elon Musk", clue: " where you go when you gotta go", description: "Likes to play with rockets and electric cars.", container: {main: null}},
-  {unlocked: false, image: "gates.jpg", name: "Bill Gates", clue: " where you microwave a hotdog", description: "Is saving many people in Africa.</br>He use to write some software.", container: {main: null}},
-  {unlocked: false, image: "hermine.jpg", name: "Ms. Granger", clue: " where you tickle the ivory", description: "She really is the brightest wizard of her age.", container: {main: null}},
+  {unlocked: false, image: "musk.jpg", name: "Elon Musk", clue: " where you microwave a hotdog", description: "Likes to play with rockets and electric cars.", container: {main: null}},
+  {unlocked: false, image: "gates.jpg", name: "Bill Gates", clue: " where you tickle the ivory", description: "Is saving many people in Africa.</br>He use to write some software.", container: {main: null}},
+  {unlocked: false, image: "hermine.jpg", name: "Ms. Granger", clue: " where you go when you gotta go", description: "She really is the brightest wizard of her age.", container: {main: null}},
 ]
 
 gameLogic.Start = function()
