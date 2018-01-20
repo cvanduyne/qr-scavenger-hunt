@@ -1,6 +1,9 @@
 body {
-    //margin: 60px auto;
-    //width: 70%;
+    //
+    margin: 60px auto;
+    //
+    width: 70%;
+    background: black;
 }
 nav ul, footer ul {
     font-family:'Helvetica', 'Arial', 'Sans-Serif';
@@ -58,12 +61,10 @@ table {
     width: 100%;
     position: relative;
     background:url(../images/indexcard.jpg);
-
 }
 .scannerTable {
 
-	background:beige;
-	
+background:beige;
 }
 tbody {
 	font-family: Lucida Sans Typewriter,Lucida Console,monaco,Bitstream Vera Sans Mono,monospace; 
@@ -112,11 +113,26 @@ tbody {
 }
 
 #preview {
-	width:100px;
+	/* width: 150px; */
 	height:100px;
-/*
+	/*
     margin-left: auto;
     margin-right: auto;
     display: block
     */
+	padding:  0;
+}
+header {
+	background:beige
+	height:200px;
+
+}
+.headerDiv {
+ position: fixed; 
+   top: 0; 
+   width:100%;
+   background: beige;
+}
+.main{
+  margin-top: 160px;
 }

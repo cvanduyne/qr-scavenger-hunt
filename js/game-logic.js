@@ -10,6 +10,7 @@ gameLogic.data = [
 
 gameLogic.Start = function()
 {
+  this.statusElement = document.getElementById("status");
   this.CreateCards( document.getElementById("cardContainer") );
 }
 
@@ -51,10 +52,16 @@ gameLogic.UpdateCard = function(id)
 }
 gameLogic.UpdateCards = function()
 {
+  var unlockedCount = 0;
   for (var i=0; i < this.data.length; i++)
   {
     this.UpdateCard(i);
+    if (this.data[i].unlocked)
+    {
+      unlockedCount++;
+    }
   }
+  this.statusElement.innerHTML = "<h2>Found "+unlockedCount+" of "+this.data.length+"</h2>";
 }
 gameLogic.OnFoundId = function( id )
 {
