@@ -3,9 +3,9 @@
 var gameLogic = {};
 
 gameLogic.data = [
-  {unlocked: false, image: "musk.jpg", name: "Bob", clue: "Where you go when you gotta go", description: "sits and watches TV\nDoes lots of\nrobot stuff and stuff", container: {main: null}},
-  {unlocked: false, image: "gates.jpg", name: "Mary", clue: "Where you go when you gotta go", description: "Has lots of cats", container: {main: null}},
-  {unlocked: false, image: "hermine.jpg", name: "Ms. Granger", clue: "Where you go when you gotta go", description: "Is wearing a cast", container: {main: null}},
+  {unlocked: false, image: "musk.jpg", name: "Elon Musk", clue: " where you go when you gotta go", description: "Likes to play with rockets and electric cars.", container: {main: null}},
+  {unlocked: false, image: "gates.jpg", name: "Bill Gates", clue: " where you microwave a hotdog", description: "Is saving many people in Africa.</br>He use to write some software.", container: {main: null}},
+  {unlocked: false, image: "hermine.jpg", name: "Ms. Granger", clue: " where you tickle the ivory", description: "She really is the brightest wizard of her age.", container: {main: null}},
 ]
 
 gameLogic.Start = function()
@@ -46,9 +46,11 @@ gameLogic.UpdateCard = function(id)
 //    container.image.innerHTML = "<img src='images/unknown.png' width=100 height=100>";
 //    container.name.innerHTML = "----";
 //    container.age.innerHTML = "----";
-    container.description.innerHTML = 
-    "<h1><i>Identity Unknown</i><h1>"+
-    "<h2>QR Clue:<br/>"+this.data[id].clue+"</h2>";
+    container.description.innerHTML =     
+    "<img class='photoStraight' src='images/unknown.png'>"+
+    "<h1 class='unknownTitle'>Identity Unknown<h1>"+
+    "<h2>Find the <img src='images/id0.jpg' width=60 height=60></img> " +
+    this.data[id].clue+"</h2>";
   }
 }
 gameLogic.UpdateCards = function()

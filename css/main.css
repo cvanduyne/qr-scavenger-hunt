@@ -83,7 +83,11 @@ tbody {
     height: 200px;
     transform: rotate(15deg);
 }
-
+.photoStraight {
+    float:right;
+    width: 200px;
+    height: 200px;
+}
 .paperclip {
     position: absolute;
     right: 130px;
@@ -154,4 +158,9 @@ header {
 }@-webkit-keyframes fadeGreenToInitial {
   0%   {background:green;}
   100% {background:initial;}
+}
+
+.unknownTitle
+{
+font-weight: lighter;
 }
