@@ -13,6 +13,12 @@ gameLogic.Start = function()
   this.headerDiv = document.getElementById("headerDiv");
   this.statusElement = document.getElementById("status");
   this.CreateCards( document.getElementById("cardContainer") );
+
+  var launchId = parseInt(window.location.search.split("id=")[1]);
+  if (launchId >= 0 && launchId < this.data.length )
+  {
+    this.OnFoundId(launchId);
+  }
 }
 
 gameLogic.CreateCards = function( parentElement )
